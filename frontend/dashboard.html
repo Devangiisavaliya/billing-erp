@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP Dashboard</title>
+
+    <link rel="stylesheet" href="/css/dashboard.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Billing ERP</h2>
+        </div>
+
+        <ul>
+
+            <li class="active">
+                <a href="/dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="/pages/customers.html">
+                    Customers
+                </a>
+            </li>
+
+            <li>
+                <a href="/pages/categories.html">
+                    Categories
+                </a>
+            </li>
+
+            <li>
+                <a href="/pages/products.html">
+                    Products
+                </a>
+            </li>
+
+            <li>
+                <a href="/pages/suppliers.html">
+                    Suppliers
+                </a>
+            </li>
+
+            <li>
+                <a href="/pages/purchases.html">
+                    Purchases
+                </a>
+            </li>
+
+            <li>
+                <a href="/pages/inventory.html">
+                    Inventory
+                </a>
+            </li>
+
+            <li>
+                <a href="/pages/billing.html">
+                    Billing
+                </a>
+            </li>
+
+            <li>
+                <a href="/pages/expenses.html">
+                    Expenses
+                </a>
+            </li>
+
+            <li>
+                <a href="/pages/reports.html">
+                    Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="/pages/settings.html">
+                    Settings
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <!-- Navbar -->
+
+        <div class="topbar">
+
+            <div>
+                <h1>
+                    Dashboard
+                </h1>
+            </div>
+
+            <div class="user-section">
+
+                <span id="username">
+                    User
+                </span>
+
+                <button id="logoutBtn">
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Stats Cards -->
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Today's Sales</h3>
+                <p id="today_sales">
+                    ₹0
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Today's Bills</h3>
+                <p id="today_bills">
+                    0
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Monthly Revenue</h3>
+                <p id="monthly_revenue">
+                    ₹0
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Net Profit</h3>
+                <p id="net_profit">
+                    ₹0
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Total Customers</h3>
+                <p id="total_customers">
+                    0
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Total Products</h3>
+                <p id="total_products">
+                    0
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Total Suppliers</h3>
+                <p id="total_suppliers">
+                    0
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Total Purchases</h3>
+                <p id="total_purchases">
+                    0
+                </p>
+            </div>
+
+        </div>
+        <div class="stat-card low-stock-card">
+
+            <span>
+                Low Stock Alert
+            </span>
+
+            <h2 id="lowStockAlert">
+                0
+            </h2>
+
+        </div>
+        <div
+            class="warning-box"
+            id="warningBox"
+        >
+        </div>
+        <!-- Analytics Cards -->
+
+        <div class="analytics-section">
+
+            <div class="analytics-card">
+
+                <h3>
+                    Best Selling Product
+                </h3>
+
+                <p id="best_selling_product">
+                    -
+                </p>
+
+                <small>
+                    Qty:
+                    <span id="best_selling_qty">
+                        0
+                    </span>
+                </small>
+
+            </div>
+
+            <div class="analytics-card">
+
+                <h3>
+                    Top Customer
+                </h3>
+
+                <p id="top_customer">
+                    -
+                </p>
+
+                <small>
+                    Amount:
+                    ₹<span id="top_customer_amount">
+                        0
+                    </span>
+                </small>
+
+            </div>
+
+        </div>
+
+        <!-- Charts -->
+
+        <div class="charts">
+
+            <div class="chart-card">
+
+                <h3>
+                    Revenue Overview
+                </h3>
+
+                <canvas id="revenueChart"></canvas>
+
+            </div>
+
+            <div class="chart-card">
+
+                <h3>
+                    Sales Overview
+                </h3>
+
+                <canvas id="salesChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="/js/dashboard.js"></script>
+
+</body>
+</html>

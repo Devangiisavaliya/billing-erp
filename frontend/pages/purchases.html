@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Purchases | Billing ERP
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/css/purchases.css"
+    >
+
+</head>
+
+<body>
+
+<div class="erp-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            Billing ERP
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="/dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="/customers">
+                    Customers
+                </a>
+            </li>
+
+            <li>
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+
+            <li>
+                <a href="/products">
+                    Products
+                </a>
+            </li>
+
+            <li>
+                <a href="/suppliers">
+                    Suppliers
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="/purchases">
+                    Purchases
+                </a>
+            </li>
+
+            <li>
+                <a href="/inventory">
+                    Inventory
+                </a>
+            </li>
+
+            <li>
+                <a href="/billing">
+                    Billing
+                </a>
+            </li>
+
+            <li>
+                <a href="/reports">
+                    Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="/settings">
+                    Settings
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- CONTENT -->
+
+    <main class="content">
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-header">
+
+            <div>
+
+                <h1>
+                    Purchases
+                </h1>
+
+                <p>
+                    Manage supplier purchases and stock entries
+                </p>
+
+            </div>
+
+            <button id="savePurchaseBtn">
+                Save Purchase
+            </button>
+
+        </div>
+
+        <!-- STATS -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <span>
+                    Total Purchases
+                </span>
+
+                <h2 id="purchaseCount">
+                    0
+                </h2>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span>
+                    Total Purchase Amount
+                </span>
+
+                <h2 id="purchaseAmount">
+                    ₹0
+                </h2>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span>
+                    Pending Purchases
+                </span>
+
+                <h2 id="pendingPurchases">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+        <!-- PURCHASE FORM -->
+
+        <div class="purchase-card">
+
+            <h2>
+                New Purchase Entry
+            </h2>
+
+            <div class="form-grid">
+
+                <input
+                    type="text"
+                    id="purchase_no"
+                    placeholder="Purchase Number"
+                >
+
+                <input
+                    type="date"
+                    id="purchase_date"
+                >
+
+                <select id="supplier_id">
+
+                    <option value="">
+                        Select Supplier
+                    </option>
+
+                </select>
+
+                <select id="payment_status">
+
+                    <option value="pending">
+                        Pending
+                    </option>
+
+                    <option value="paid">
+                        Paid
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <!-- PURCHASE ITEMS -->
+
+        <div class="purchase-card">
+
+            <div class="table-header">
+
+                <h2>
+                    Purchase Items
+                </h2>
+
+                <button
+                    id="addRowBtn"
+                >
+                    + Add Product
+                </button>
+
+            </div>
+
+            <div class="table-scroll">
+
+                <table id="purchaseItemsTable">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Product
+                            </th>
+
+                            <th>
+                                Quantity
+                            </th>
+
+                            <th>
+                                Price
+                            </th>
+
+                            <th>
+                                Total
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="purchaseItemsBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <!-- TOTALS -->
+
+        <div class="totals-card">
+
+            <div class="total-row">
+
+                <span>
+                    Sub Total
+                </span>
+
+                <strong id="subtotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+            <div class="total-row">
+
+                <span>
+                    GST Amount
+                </span>
+
+                <strong id="gstAmount">
+                    ₹0
+                </strong>
+
+            </div>
+
+            <div class="total-row grand-total">
+
+                <span>
+                    Grand Total
+                </span>
+
+                <strong id="grandTotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+        </div>
+
+        <!-- PURCHASE HISTORY -->
+
+        <div class="purchase-card">
+
+            <h2>
+                Purchase History
+            </h2>
+
+            <div class="table-scroll">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Purchase No</th>
+
+                            <th>Supplier</th>
+
+                            <th>Date</th>
+
+                            <th>Amount</th>
+
+                            <th>Status</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="purchaseTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="/js/purchases.js"></script>
+
+</body>
+
+</html>
+

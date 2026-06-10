@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Expenses | Billing ERP
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/css/expenses.css"
+    >
+
+</head>
+
+<body>
+
+<div class="erp-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            Billing ERP
+        </div>
+
+        <ul>
+
+            <li><a href="/dashboard.html">Dashboard</a></li>
+            <li><a href="/customers">Customers</a></li>
+            <li><a href="/categories">Categories</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/suppliers">Suppliers</a></li>
+            <li><a href="/purchases">Purchases</a></li>
+            <li><a href="/inventory">Inventory</a></li>
+            <li><a href="/billing">Billing</a></li>
+            <li><a href="/reports">Reports</a></li>
+            <li><a href="/settings">Settings</a></li>
+
+            <li class="active">
+                <a href="/expenses">
+                    Expenses
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- CONTENT -->
+
+    <main class="content">
+
+        <!-- HEADER -->
+
+        <div class="page-header">
+
+            <div>
+
+                <h1>
+                    Expense Management
+                </h1>
+
+                <p>
+                    Track and manage business expenses
+                </p>
+
+            </div>
+
+            <button
+                id="addExpenseBtn"
+            >
+                + Add Expense
+            </button>
+
+        </div>
+
+        <!-- STATS -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <span>
+                    Total Expenses
+                </span>
+
+                <h2 id="totalExpense">
+                    ₹0
+                </h2>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span>
+                    Monthly Expenses
+                </span>
+
+                <h2 id="monthlyExpense">
+                    ₹0
+                </h2>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span>
+                    Total Records
+                </span>
+
+                <h2 id="expenseCount">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search Expense..."
+            >
+
+        </div>
+
+        <!-- EXPENSE TABLE -->
+
+        <div class="table-card">
+
+            <div class="table-scroll">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Name</th>
+
+                            <th>Category</th>
+
+                            <th>Amount</th>
+
+                            <th>Date</th>
+
+                            <th>Notes</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="expenseTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<!-- MODAL -->
+
+<div
+    class="modal"
+    id="expenseModal"
+>
+
+    <div class="modal-content">
+
+        <h2 id="modalTitle">
+            Add Expense
+        </h2>
+
+        <form id="expenseForm">
+
+            <input
+                type="hidden"
+                id="expenseId"
+            >
+
+            <input
+                type="text"
+                id="expense_name"
+                placeholder="Expense Name"
+                required
+            >
+
+            <select
+                id="expense_category"
+                required
+            >
+
+                <option value="">
+                    Select Category
+                </option>
+
+                <option value="Rent">
+                    Rent
+                </option>
+
+                <option value="Salary">
+                    Salary
+                </option>
+
+                <option value="Electricity">
+                    Electricity
+                </option>
+
+                <option value="Internet">
+                    Internet
+                </option>
+
+                <option value="Transport">
+                    Transport
+                </option>
+
+                <option value="Office">
+                    Office
+                </option>
+
+                <option value="Marketing">
+                    Marketing
+                </option>
+
+                <option value="Misc">
+                    Miscellaneous
+                </option>
+
+            </select>
+
+            <input
+                type="number"
+                id="amount"
+                placeholder="Amount"
+                required
+            >
+
+            <input
+                type="date"
+                id="expense_date"
+                required
+            >
+
+            <textarea
+                id="notes"
+                rows="4"
+                placeholder="Notes"
+            ></textarea>
+
+            <div class="modal-buttons">
+
+                <button
+                    type="submit"
+                >
+                    Save Expense
+                </button>
+
+                <button
+                    type="button"
+                    id="closeModal"
+                >
+                    Cancel
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="/js/expenses.js"></script>
+
+</body>
+</html>

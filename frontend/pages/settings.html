@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Settings | Billing ERP
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/css/settings.css"
+    >
+
+</head>
+
+<body>
+
+<div class="erp-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            Billing ERP
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="/dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="/customers">
+                    Customers
+                </a>
+            </li>
+
+            <li>
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+
+            <li>
+                <a href="/products">
+                    Products
+                </a>
+            </li>
+
+            <li>
+                <a href="/suppliers">
+                    Suppliers
+                </a>
+            </li>
+
+            <li>
+                <a href="/purchases">
+                    Purchases
+                </a>
+            </li>
+
+            <li>
+                <a href="/inventory">
+                    Inventory
+                </a>
+            </li>
+
+            <li>
+                <a href="/billing">
+                    Billing
+                </a>
+            </li>
+
+            <li>
+                <a href="/reports">
+                    Reports
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="/settings">
+                    Settings
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="content">
+
+        <!-- HEADER -->
+
+        <div class="page-header">
+
+            <div>
+
+                <h1>
+                    Company Settings
+                </h1>
+
+                <p>
+                    Manage company information and invoice settings
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- SETTINGS FORM -->
+
+        <div class="settings-card">
+
+            <div class="section-title">
+                Company Information
+            </div>
+
+            <form id="settingsForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label>
+                            Company Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="company_name"
+                            placeholder="Enter Company Name"
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            GST Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="gst_number"
+                            placeholder="Enter GST Number"
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            Mobile Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="mobile"
+                            placeholder="Enter Mobile Number"
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter Email"
+                        >
+
+                    </div>
+
+                    <div class="form-group full-width">
+
+                        <label>
+                            Company Address
+                        </label>
+
+                        <textarea
+                            id="address"
+                            rows="4"
+                            placeholder="Enter Company Address"
+                        ></textarea>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            Invoice Prefix
+                        </label>
+
+                        <input
+                            type="text"
+                            id="invoice_prefix"
+                            placeholder="INV"
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="button-area">
+
+                    <button
+                        type="submit"
+                        id="saveSettingsBtn"
+                    >
+                        Save Settings
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- COMPANY PREVIEW -->
+
+        <div class="settings-card">
+
+            <div class="section-title">
+                Invoice Preview Information
+            </div>
+
+            <div class="preview-grid">
+
+                <div class="preview-item">
+
+                    <span>
+                        Company Name
+                    </span>
+
+                    <strong id="previewCompany">
+                        -
+                    </strong>
+
+                </div>
+
+                <div class="preview-item">
+
+                    <span>
+                        GST Number
+                    </span>
+
+                    <strong id="previewGST">
+                        -
+                    </strong>
+
+                </div>
+
+                <div class="preview-item">
+
+                    <span>
+                        Mobile
+                    </span>
+
+                    <strong id="previewMobile">
+                        -
+                    </strong>
+
+                </div>
+
+                <div class="preview-item">
+
+                    <span>
+                        Invoice Prefix
+                    </span>
+
+                    <strong id="previewPrefix">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="/js/settings.js"></script>
+
+</body>
+
+</html>

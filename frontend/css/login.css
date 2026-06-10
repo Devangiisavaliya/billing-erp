@@ -1,0 +1,182 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#0f172a;
+}
+
+.login-container{
+    min-height:100vh;
+    display:flex;
+}
+
+.login-left{
+    flex:1;
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #1e40af
+    );
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    padding:50px;
+}
+
+.login-left h1{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.login-left p{
+    font-size:20px;
+    text-align:center;
+}
+
+.login-right{
+    flex:1;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#f8fafc;
+}
+
+#loginForm{
+    width:100%;
+    max-width:450px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 10px 25px rgba(
+        0,0,0,0.1
+    );
+}
+
+#loginForm h2{
+    margin-bottom:25px;
+    text-align:center;
+}
+
+.input-group{
+    margin-bottom:20px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.input-group input{
+    width:100%;
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:15px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+
+    background:#2563eb;
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+#message{
+    margin-top:15px;
+    text-align:center;
+    font-weight:600;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .login-container{
+        flex-direction:column;
+    }
+
+    .login-left{
+        padding:40px 20px;
+    }
+
+    .login-left h1{
+        font-size:32px;
+    }
+
+    .login-left p{
+        font-size:16px;
+    }
+
+    #loginForm{
+        margin:20px;
+    }
+
+}
+
+/* TABLET */
+
+@media(min-width:769px) and (max-width:1024px){
+
+    .login-left h1{
+        font-size:40px;
+    }
+
+}
+
+/* TV / LARGE SCREEN */
+
+@media(min-width:1600px){
+
+    .login-left h1{
+        font-size:70px;
+    }
+
+    .login-left p{
+        font-size:28px;
+    }
+
+    #loginForm{
+        max-width:600px;
+    }
+
+    .input-group input{
+        padding:18px;
+        font-size:18px;
+    }
+
+    button{
+        padding:18px;
+        font-size:20px;
+    }
+
+}

@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Billing POS | Billing ERP
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/css/billing.css"
+    >
+
+</head>
+
+<body>
+
+<div class="erp-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            Billing ERP
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="/dashboard.html">Dashboard</a>
+            </li>
+
+            <li>
+                <a href="/customers">Customers</a>
+            </li>
+
+            <li>
+                <a href="/categories">Categories</a>
+            </li>
+
+            <li>
+                <a href="/products">Products</a>
+            </li>
+
+            <li>
+                <a href="/suppliers">Suppliers</a>
+            </li>
+
+            <li>
+                <a href="/purchases">Purchases</a>
+            </li>
+
+            <li>
+                <a href="/inventory">Inventory</a>
+            </li>
+
+            <li class="active">
+                <a href="/billing">Billing POS</a>
+            </li>
+
+            <li>
+                <a href="/reports">Reports</a>
+            </li>
+
+            <li>
+                <a href="/settings">Settings</a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- CONTENT -->
+
+    <main class="content">
+
+        <!-- HEADER -->
+
+        <div class="page-header">
+
+            <div>
+
+                <h1>
+                    Billing POS
+                </h1>
+
+                <p>
+                    Create invoices and manage sales
+                </p>
+
+            </div>
+
+            <button id="generateBillBtn">
+                Generate Invoice
+            </button>
+
+        </div>
+
+        <!-- TOP SECTION -->
+
+        <div class="billing-grid">
+
+            <!-- CUSTOMER -->
+
+            <div class="card">
+
+                <h2>
+                    Customer Information
+                </h2>
+
+                <select id="customer_id">
+
+                    <option value="">
+                        Select Customer
+                    </option>
+
+                </select>
+
+            </div>
+
+            <!-- PAYMENT -->
+
+            <div class="card">
+
+                <h2>
+                    Payment Details
+                </h2>
+
+                <select id="payment_mode">
+
+                    <option value="Cash">
+                        Cash
+                    </option>
+
+                    <option value="UPI">
+                        UPI
+                    </option>
+
+                    <option value="Card">
+                        Card
+                    </option>
+
+                </select>
+
+                <select id="payment_status">
+
+                    <option value="paid">
+                        Paid
+                    </option>
+
+                    <option value="pending">
+                        Pending
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT SEARCH -->
+
+        <div class="card">
+
+            <div class="product-search">
+                <select id="productSelect">
+
+                    <option value="">
+                        Select Product
+                    </option>
+
+                </select>
+
+                <input
+                    type="number"
+                    id="productQty"
+                    min="1"
+                    value="1"
+                    placeholder="Qty"
+                >
+
+                <button id="addProductBtn">
+                    Add To Cart
+                </button>
+
+            </div>
+
+        </div>
+        <div class="scanner-section">
+
+    <input
+        type="text"
+        id="barcodeInput"
+        placeholder="Scan Barcode Here"
+        autofocus
+    >
+
+    <button id="startScannerBtn">
+        📷 Start Camera Scanner
+    </button>
+
+    <div id="reader"></div>
+
+</div>
+
+<select id="productSelect">
+
+    <option value="">
+        Select Product
+    </option>
+
+</select>
+        <!-- CART -->
+
+        <div class="card">
+
+            <h2>
+                Billing Cart
+            </h2>
+
+            <div class="table-scroll">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Product
+                            </th>
+
+                            <th>
+                                Price
+                            </th>
+
+                            <th>
+                                GST %
+                            </th>
+
+                            <th>
+                                Qty
+                            </th>
+
+                            <th>
+                                Total
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="cartTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <!-- TOTALS -->
+
+        <div class="totals-card">
+
+            <div class="total-row">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong id="subtotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+            <div class="total-row">
+
+                <span>
+                    GST
+                </span>
+
+                <strong id="gstAmount">
+                    ₹0
+                </strong>
+
+            </div>
+
+            <div class="total-row grand-total">
+
+                <span>
+                    Grand Total
+                </span>
+
+                <strong id="grandTotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+        </div>
+
+        <!-- SALES HISTORY -->
+
+        <div class="card">
+
+            <h2>
+                Recent Sales
+            </h2>
+
+            <div class="table-scroll">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Invoice No</th>
+
+                            <th>Customer</th>
+
+                            <th>Total</th>
+
+                            <th>Payment</th>
+
+                            <th>Status</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="salesTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="https://unpkg.com/html5-qrcode"></script>
+<script src="/js/billing.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers | Billing ERP</title>
+
+    <link rel="stylesheet" href="/css/customers.css">
+</head>
+<body>
+
+<div class="erp-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            Billing ERP
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="/dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="/customers">
+                    Customers
+                </a>
+            </li>
+
+            <li>
+                <a href="/products">
+                    Products
+                </a>
+            </li>
+
+            <li>
+                <a href="/suppliers">
+                    Suppliers
+                </a>
+            </li>
+
+            <li>
+                <a href="/purchases">
+                    Purchases
+                </a>
+            </li>
+
+            <li>
+                <a href="/inventory">
+                    Inventory
+                </a>
+            </li>
+
+            <li>
+                <a href="/billing">
+                    Billing
+                </a>
+            </li>
+
+            <li>
+                <a href="/reports">
+                    Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="/settings">
+                    Settings
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- CONTENT -->
+
+    <main class="content">
+
+        <!-- HEADER -->
+
+        <div class="page-header">
+
+            <div>
+                <h1>Customers</h1>
+                <p>
+                    Manage your customer database
+                </p>
+            </div>
+
+            <button id="addCustomerBtn">
+                + Add Customer
+            </button>
+
+        </div>
+
+        <!-- STATS -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <span>
+                    Total Customers
+                </span>
+
+                <h2 id="customerCount">
+                    0
+                </h2>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span>
+                    Total Outstanding
+                </span>
+
+                <h2 id="totalOutstanding">
+                    ₹0
+                </h2>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span>
+                    Active Customers
+                </span>
+
+                <h2 id="activeCustomers">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search Customer..."
+            >
+
+        </div>
+
+        <!-- TABLE -->
+
+        <div class="table-card">
+
+            <div class="table-scroll">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Name</th>
+
+                            <th>Mobile</th>
+
+                            <th>Email</th>
+
+                            <th>Address</th>
+
+                            <th>GST Number</th>
+
+                            <th>Outstanding</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="customerTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<!-- MODAL -->
+
+<div
+    class="modal"
+    id="customerModal"
+>
+
+    <div class="modal-content">
+
+        <h2 id="modalTitle">
+            Add Customer
+        </h2>
+
+        <form id="customerForm">
+
+            <input
+                type="hidden"
+                id="customerId"
+            >
+
+            <input
+                type="text"
+                id="customer_name"
+                placeholder="Customer Name"
+                required
+            >
+
+            <input
+                type="text"
+                id="mobile"
+                placeholder="Mobile Number"
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email Address"
+            >
+
+            <textarea
+                id="address"
+                placeholder="Customer Address"
+            ></textarea>
+
+            <input
+                type="text"
+                id="gst_number"
+                placeholder="GST Number"
+            >
+
+            <div class="modal-buttons">
+
+                <button type="submit">
+                    Save Customer
+                </button>
+
+                <button
+                    type="button"
+                    id="closeModal"
+                >
+                    Cancel
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="/js/customers.js"></script>
+
+</body>
+</html>

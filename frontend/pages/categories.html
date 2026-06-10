@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Categories | Billing ERP
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/css/categories.css"
+    >
+
+</head>
+
+<body>
+
+<div class="erp-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            Billing ERP
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="/dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="/customers">
+                    Customers
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+
+            <li>
+                <a href="/products">
+                    Products
+                </a>
+            </li>
+
+            <li>
+                <a href="/suppliers">
+                    Suppliers
+                </a>
+            </li>
+
+            <li>
+                <a href="/purchases">
+                    Purchases
+                </a>
+            </li>
+
+            <li>
+                <a href="/inventory">
+                    Inventory
+                </a>
+            </li>
+
+            <li>
+                <a href="/billing">
+                    Billing
+                </a>
+            </li>
+
+            <li>
+                <a href="/reports">
+                    Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="/settings">
+                    Settings
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- CONTENT -->
+
+    <main class="content">
+
+        <!-- HEADER -->
+
+        <div class="page-header">
+
+            <div>
+
+                <h1>
+                    Categories
+                </h1>
+
+                <p>
+                    Manage product categories
+                </p>
+
+            </div>
+
+            <button id="addCategoryBtn">
+                + Add Category
+            </button>
+
+        </div>
+
+        <!-- STATS -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <span>
+                    Total Categories
+                </span>
+
+                <h2 id="categoryCount">
+                    0
+                </h2>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span>
+                    Active Categories
+                </span>
+
+                <h2 id="activeCategories">
+                    0
+                </h2>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span>
+                    Product Groups
+                </span>
+
+                <h2 id="productGroups">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search Category..."
+            >
+
+        </div>
+
+        <!-- TABLE -->
+
+        <div class="table-card">
+
+            <div class="table-scroll">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Category Name</th>
+
+                            <th>Description</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="categoryTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<!-- MODAL -->
+
+<div
+    class="modal"
+    id="categoryModal"
+>
+
+    <div class="modal-content">
+
+        <h2 id="modalTitle">
+            Add Category
+        </h2>
+
+        <form id="categoryForm">
+
+            <input
+                type="hidden"
+                id="categoryId"
+            >
+
+            <input
+                type="text"
+                id="category_name"
+                placeholder="Category Name"
+                required
+            >
+
+            <textarea
+                id="description"
+                placeholder="Description"
+            ></textarea>
+
+            <div class="modal-buttons">
+
+                <button type="submit">
+                    Save Category
+                </button>
+
+                <button
+                    type="button"
+                    id="closeModal"
+                >
+                    Cancel
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="/js/categories.js"></script>
+
+</body>
+</html>

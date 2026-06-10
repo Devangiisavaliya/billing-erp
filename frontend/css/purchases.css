@@ -1,0 +1,703 @@
+
+:root{
+    --sidebar:#0f172a;
+    --primary:#2563eb;
+    --secondary:#4f46e5;
+    --success:#10b981;
+    --danger:#ef4444;
+    --warning:#f59e0b;
+
+    --bg:#f8fafc;
+    --card:#ffffff;
+
+    --text:#0f172a;
+    --muted:#64748b;
+
+    --border:#e2e8f0;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter,Segoe UI,sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+/* =========================
+   ERP LAYOUT
+========================= */
+
+.erp-layout{
+    display:flex;
+    min-height:100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+
+    width:270px;
+
+    height:100vh;
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    background:
+    linear-gradient(
+        180deg,
+        #0f172a,
+        #1e293b
+    );
+
+    padding:25px;
+
+    overflow-y:auto;
+
+    z-index:100;
+}
+
+.logo{
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-bottom:35px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    margin-bottom:10px;
+}
+
+.sidebar a{
+
+    display:block;
+
+    text-decoration:none;
+
+    color:#cbd5e1;
+
+    padding:14px 16px;
+
+    border-radius:12px;
+
+    transition:.3s;
+}
+
+.sidebar a:hover,
+.sidebar .active a{
+
+    background:
+    rgba(
+        255,
+        255,
+        255,
+        .08
+    );
+
+    color:white;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content{
+
+    flex:1;
+
+    margin-left:270px;
+
+    width:calc(100% - 270px);
+
+    padding:30px;
+}
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.page-header{
+
+    display:flex;
+
+    justify-content:
+    space-between;
+
+    align-items:center;
+
+    padding:30px;
+
+    border-radius:24px;
+
+    color:white;
+
+    margin-bottom:25px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #4f46e5
+    );
+
+    box-shadow:
+    0 15px 35px
+    rgba(
+        37,
+        99,
+        235,
+        .25
+    );
+}
+
+.page-header h1{
+
+    font-size:36px;
+
+    margin-bottom:8px;
+}
+
+.page-header p{
+    opacity:.9;
+}
+
+#savePurchaseBtn{
+
+    border:none;
+
+    background:white;
+
+    color:#2563eb;
+
+    padding:14px 24px;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+#savePurchaseBtn:hover{
+
+    transform:
+    translateY(-2px);
+
+    box-shadow:
+    0 10px 25px
+    rgba(
+        255,
+        255,
+        255,
+        .25
+    );
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        3,
+        1fr
+    );
+
+    gap:20px;
+
+    margin-bottom:25px;
+}
+
+.stat-card{
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:25px;
+
+    box-shadow:
+    0 10px 25px
+    rgba(
+        0,
+        0,
+        0,
+        .06
+    );
+
+    transition:.3s;
+}
+
+.stat-card:hover{
+
+    transform:
+    translateY(-5px);
+}
+
+.stat-card span{
+
+    display:block;
+
+    color:var(--muted);
+
+    margin-bottom:10px;
+}
+
+.stat-card h2{
+
+    color:var(--primary);
+
+    font-size:34px;
+}
+
+/* =========================
+   PURCHASE CARD
+========================= */
+
+.purchase-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+    0 10px 30px
+    rgba(
+        0,
+        0,
+        0,
+        .06
+    );
+}
+
+.purchase-card h2{
+
+    margin-bottom:20px;
+}
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        4,
+        1fr
+    );
+
+    gap:15px;
+}
+
+.form-grid input,
+.form-grid select{
+
+    padding:14px;
+
+    border:
+    1px solid
+    var(--border);
+
+    border-radius:12px;
+
+    outline:none;
+}
+
+/* =========================
+   TABLE HEADER
+========================= */
+
+.table-header{
+
+    display:flex;
+
+    justify-content:
+    space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+#addRowBtn{
+
+    border:none;
+
+    background:
+    var(--success);
+
+    color:white;
+
+    padding:12px 18px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:600;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.table-scroll{
+    overflow-x:auto;
+}
+
+table{
+
+    width:100%;
+
+    min-width:900px;
+
+    border-collapse:
+    collapse;
+}
+
+thead{
+
+    background:
+    linear-gradient(
+        90deg,
+        #2563eb,
+        #4f46e5
+    );
+
+    color:white;
+}
+
+th{
+
+    padding:16px;
+
+    text-align:left;
+}
+
+td{
+
+    padding:16px;
+
+    border-bottom:
+    1px solid
+    #eef2f7;
+}
+
+tbody tr:hover{
+
+    background:#f8fafc;
+}
+
+/* =========================
+   INPUTS INSIDE TABLE
+========================= */
+
+table select,
+table input{
+
+    width:100%;
+
+    padding:10px;
+
+    border:
+    1px solid
+    var(--border);
+
+    border-radius:8px;
+}
+
+/* =========================
+   REMOVE BUTTON
+========================= */
+
+.remove-btn{
+
+    border:none;
+
+    background:
+    var(--danger);
+
+    color:white;
+
+    padding:10px 14px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+}
+
+/* =========================
+   TOTALS CARD
+========================= */
+
+.totals-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+    0 10px 30px
+    rgba(
+        0,
+        0,
+        0,
+        .06
+    );
+}
+
+.total-row{
+
+    display:flex;
+
+    justify-content:
+    space-between;
+
+    margin-bottom:15px;
+
+    font-size:18px;
+}
+
+.grand-total{
+
+    border-top:
+    2px solid
+    var(--border);
+
+    padding-top:15px;
+
+    font-size:24px;
+
+    color:var(--primary);
+}
+
+/* =========================
+   STATUS BADGES
+========================= */
+
+.status-paid{
+
+    background:
+    #dcfce7;
+
+    color:
+    #166534;
+
+    padding:8px 14px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+.status-pending{
+
+    background:
+    #fef3c7;
+
+    color:
+    #92400e;
+
+    padding:8px 14px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+/* =========================
+   DELETE BUTTON
+========================= */
+
+.delete-btn{
+
+    border:none;
+
+    background:
+    var(--danger);
+
+    color:white;
+
+    padding:10px 16px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:600;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .sidebar{
+        display:none;
+    }
+
+    .content{
+
+        margin-left:0;
+
+        width:100%;
+
+        padding:15px;
+    }
+
+    .page-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+    }
+
+    .page-header h1{
+        font-size:28px;
+    }
+
+    #savePurchaseBtn{
+        width:100%;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .table-header{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        align-items:flex-start;
+    }
+
+    #addRowBtn{
+        width:100%;
+    }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(min-width:769px)
+and
+(max-width:1200px){
+
+    .sidebar{
+        width:220px;
+    }
+
+    .content{
+
+        margin-left:220px;
+
+        width:
+        calc(
+            100% - 220px
+        );
+    }
+
+    .form-grid{
+
+        grid-template-columns:
+        repeat(
+            2,
+            1fr
+        );
+    }
+
+    .stats-grid{
+
+        grid-template-columns:
+        repeat(
+            2,
+            1fr
+        );
+    }
+}
+
+/* =========================
+   TV / 4K
+========================= */
+
+@media(min-width:1920px){
+
+    .sidebar{
+        width:340px;
+    }
+
+    .content{
+
+        margin-left:340px;
+
+        width:
+        calc(
+            100% - 340px
+        );
+
+        padding:45px;
+    }
+
+    .page-header h1{
+        font-size:52px;
+    }
+
+    .stat-card h2{
+        font-size:48px;
+    }
+
+    table{
+        font-size:18px;
+    }
+
+    th,
+    td{
+        padding:22px;
+    }
+}
+
